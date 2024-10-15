@@ -1,5 +1,6 @@
 
 import { Recipe } from "@/app/components/recipes";
+import RecipeFull from "@/app/recipe/[id]/components/recipeFull";
 import { Modal } from "@/components/ui/Modal";
 
 type Params = {
@@ -26,7 +27,7 @@ export default async function Recipes({params} : { params: Params}) {
   }
   return (
     <Modal>
-      <div className={`h-[300px] w-full bg-cover bg-[url("https://cdn.dummyjson.com/recipe-images/${recipe.id}.webp")] bg-[50%_20%]`}></div>
+      <RecipeFull {...recipe}/>
     </Modal>
   );
 }
